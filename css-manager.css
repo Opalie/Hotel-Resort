@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bandeau {
+    display:flex;
+    justify-content: space-around;
+    height: 5%;
+    background-color: #0a4ba1;
+    padding-top: 1%;
+}
+
+#menu.bandeau {
+    display:flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Segoe UI Regular', sans-serif;
+}
+
+#Titre.menu {
+    font-weight:bold;
+    margin-left:-25%;
+    color: white;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 130%;
+}
+
+#cham.menu, #decon.bandeau {
+    font-size:120%;
+    color:white;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+#titrech {
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+    font-size: 175%;
+    color: #0a4ba1;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-family: 'Segoe UI Bold', sans-serif;
+}
+
+#un.chambres {
+    display:flex;
+    flex-direction: column;
+    border: 3px solid white;
+    width: 8%;
+    height:11%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    box-shadow: 1px 1px 10px dimgrey;
+    padding: 0.5%;
+}
+
+#deux.chambres {
+    display:flex;
+    flex-direction: column;
+    border: 3px solid white;
+    width: 8%;
+    height:11%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    box-shadow: 1px 1px 10px dimgrey;
+    padding: 0.5%;
+}
+
+#trois.chambres {
+    display:flex;
+    flex-direction: column;
+    border: 3px solid white;
+    width: 8%;
+    height:11%;
+    border-radius: 10px;
+    margin-top: 1%;
+    margin-left: 15%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    box-shadow: 1px 1px 10px dimgrey;
+    padding: 0.5%;
+}
+
+#un>.chambretat {
+    margin-top: 21%;
+    color: #E30000;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 110%;
+}
+
+#deux>.chambretat {
+    margin-top: 21%;
+    color: #36B700;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 110%;
+}
+
+#trois>.chambretat {
+    margin-top: 21%;
+    color: #EEBE00;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 110%;
+}
+#chambrenom {
+    font-family: 'Segoe UI Bold', sans-serif;
+    color: #0a4ba1;
+    font-weight:bold;
+    font-size:115%;
+}
+#chambretage {
+    font-family: 'Segoe UI Regular', sans-serif;
+    color: #0a4ba1;
+}
+#chambrocc {
+    margin-top: 21%;
+    color: #E30000;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 110%;
+}
