@@ -49,8 +49,8 @@
     display:flex;
     flex-direction: column;
     border: 3px solid white;
-    width: 9%;
-    height:9%;
+    width: 180px;
+    height:90px;
     border-radius: 10px;
     margin-top: 1%;
     margin-left: 15%;
@@ -64,8 +64,8 @@
     display:flex;
     flex-direction: column;
     border: 3px solid white;
-    width: 9%;
-    height:9%;
+    width: 180px;
+    height:90px;
     border-radius: 10px;
     margin-top: 1%;
     margin-left: 15%;
@@ -79,8 +79,8 @@
     display:flex;
     flex-direction: column;
     border: 3px solid white;
-    width: 9%;
-    height:9%;
+    width: 180px;
+    height:90px;
     border-radius: 10px;
     margin-top: 1%;
     margin-left: 15%;
@@ -90,26 +90,24 @@
     padding: 0.5%;
 }
 
-#un>.chambretat {
-    margin-top: 21%;
-    color: #E30000;
+.chambretat{
     font-family: 'Segoe UI Bold', sans-serif;
+    margin-top:19%;
     font-size: 110%;
+}
+
+#un>.chambretat {
+    color: #E30000;
 }
 
 #deux>.chambretat {
-    margin-top: 21%;
     color: #36B700;
-    font-family: 'Segoe UI Bold', sans-serif;
-    font-size: 110%;
 }
 
 #trois>.chambretat {
-    margin-top: 21%;
     color: #EEBE00;
-    font-family: 'Segoe UI Bold', sans-serif;
-    font-size: 110%;
 }
+
 #chambrenom {
     font-family: 'Segoe UI Bold', sans-serif;
     color: #0a4ba1;
