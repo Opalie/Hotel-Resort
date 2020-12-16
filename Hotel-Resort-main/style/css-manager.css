@@ -4,6 +4,14 @@
     text-decoration: none;
 }
 
+a:visited{
+    color: white;
+}
+
+a{
+    color: white;
+}
+
 #bandeau {
     display:flex;
     justify-content: space-around;

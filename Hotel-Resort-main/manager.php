@@ -12,6 +12,11 @@
 
 <?php
 
+session_start();
+if(!isset($_SESSION['user_id'])){
+    header('location: index.php');
+}
+  
 require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
 
@@ -32,15 +37,8 @@ $rows = mysqli_fetch_all($resultData);
 
 $employees = getFreeEmployees($conn);
 
+include_once 'header.php'
 ?>
-<div id="bandeau">
-    <div class="bandeau" id="menu">
-        <div class="menu" id="Titre">Hôtel Ressort F2</div>
-        <div class="menu">Chambres</div>
-        <div class="menu">Personnel</div>
-    </div>
-    <div class="bandeau" id="decon">Déconnexion</div>
-</div>
 
 <div id="titrech">Gestion des chambres</div>
 
