@@ -26,7 +26,7 @@ require_once 'includes/functions.inc.php';
 
 //===============GET ROOMS===========================
 
-$sql = "SELECT * FROM chambre";
+$sql = "SELECT * FROM chambre ORDER BY numero ASC";
 $stmt = mysqli_stmt_init($conn);
 
 if  (!mysqli_stmt_prepare($stmt, $sql)){
