@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 16 déc. 2020 à 12:23
+-- Généré le : mer. 16 déc. 2020 à 15:24
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -40,13 +40,31 @@ CREATE TABLE `chambre` (
 --
 
 INSERT INTO `chambre` (`id`, `numero`, `etage`, `status_id`, `employe_id`) VALUES
-(8, 101, 1, 3, NULL),
-(9, 102, 1, 1, NULL),
-(10, 103, 1, 2, NULL),
-(11, 104, 1, 3, NULL),
-(12, 105, 1, 1, NULL),
-(13, 201, 2, 3, NULL),
-(14, 202, 2, 2, NULL);
+(8, 1, 1, 3, NULL),
+(9, 2, 1, 1, NULL),
+(10, 3, 1, 2, NULL),
+(11, 4, 1, 3, NULL),
+(12, 5, 1, 1, NULL),
+(13, 9, 2, 3, NULL),
+(14, 10, 2, 2, NULL),
+(15, 6, 1, 1, NULL),
+(16, 7, 1, 3, NULL),
+(17, 8, 1, 2, NULL),
+(18, 11, 2, 3, NULL),
+(19, 12, 2, 3, NULL),
+(20, 13, 2, 3, NULL),
+(21, 14, 2, 3, NULL),
+(22, 15, 2, 3, NULL),
+(23, 16, 2, 3, NULL),
+(24, 17, 3, 3, NULL),
+(25, 18, 3, 3, NULL),
+(26, 19, 3, 2, NULL),
+(27, 20, 3, 3, NULL),
+(28, 21, 3, 2, NULL),
+(29, 22, 3, 3, NULL),
+(30, 23, 3, 3, NULL),
+(31, 24, 3, 3, NULL),
+(32, 25, 3, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -149,7 +167,7 @@ ALTER TABLE `utilisateur`
 -- AUTO_INCREMENT pour la table `chambre`
 --
 ALTER TABLE `chambre`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT pour la table `employe`
