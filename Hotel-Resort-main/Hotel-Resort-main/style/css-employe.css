@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bandeau {
+    display:flex;
+    justify-content: space-around;
+    height: 5%;
+    background-color: #0a4ba1;
+    padding-top: 1%;
+}
+
+#menu.bandeau {
+    display:flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Segoe UI Regular', sans-serif;
+}
+
+#Titre.menu {
+    font-weight:bold;
+    margin-left:-25%;
+    color: white;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 130%;
+}
+
+.menu, #decon.bandeau {
+    font-size:120%;
+    color:white;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+#titrech {
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+    font-size: 175%;
+    color: #0a4ba1;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-family: 'Segoe UI Bold', sans-serif;
+}
+
+.employe{
+
+    display:flex;
+    flex-direction: column;
+    border: 3px solid white;
+    width: 180px;
+    height:40px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px dimgrey;
+    padding: 0.5%;
+    text-align: center;
+    font-family: 'Segoe UI Regular', sans-serif;
+    color: #0a4ba1;
+    line-height: 40px;
+    font-size: large;
+    font-weight: bold;
+}
+
+.affichageEmploye{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 0px;
+    width: 70%;
+    margin-left: 15%;
+}
