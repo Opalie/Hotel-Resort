@@ -76,19 +76,23 @@ function uidExists($conn, $login){
    
 }
 
-function createUser($conn,$prenom,$nom){
+function createUser($conn,$login,$pwd,$role){
 
-    $sql = "INSERT INTO employe (prenom,nom) VALUES (?, ?) ;";
+    $sql = "INSERT INTO employe (login,password,id_role) VALUES (?, ?, ?) ;";
     $stmt = mysqli_stmt_init($conn);
 
     if  (!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../signup.php?error=stmtfailed");
         exit();
     }
+
+    $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
     
-    mysqli_stmt_bind_param($stmt, "ss", $prenom, $nom);
+    mysqli_stmt_bind_param($stmt, "ssi", $login, $hashedPwd, $role);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+
+    loginUser($conn,$login,$pwd);
 }
 
 function emptyInputLogin($login,$pwd){

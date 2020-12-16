@@ -45,47 +45,25 @@
     font-family: 'Segoe UI Bold', sans-serif;
 }
 
-.un, .deux, .trois {
+.employe{
+
     display:flex;
     flex-direction: column;
     border: 3px solid white;
     width: 180px;
-    height:90px;
+    height:40px;
     border-radius: 10px;
     box-shadow: 1px 1px 10px dimgrey;
     padding: 0.5%;
-}
-
-.chambretat{
-    font-family: 'Segoe UI Bold', sans-serif;
-    margin-top:14%;
-    font-size: 110%;
-}
-
-.un>.chambretat {
-    color: #E30000;
-}
-
-.deux>.chambretat {
-    color: #36B700;
-}
-
-.trois>.chambretat {
-    color: #EEBE00;
-}
-
-#chambrenom {
-    font-family: 'Segoe UI Bold', sans-serif;
-    color: #0a4ba1;
-    font-weight:bold;
-    font-size:115%;
-}
-#chambretage {
+    text-align: center;
     font-family: 'Segoe UI Regular', sans-serif;
     color: #0a4ba1;
+    line-height: 40px;
+    font-size: large;
+    font-weight: bold;
 }
 
-#liste-chambres{
+.affichageEmploye{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px 0px;
