@@ -89,6 +89,7 @@ function createUser($conn,$prenom,$nom){
     mysqli_stmt_bind_param($stmt, "ss", $prenom, $nom);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
+
 }
 
 function emptyInputLogin($login,$pwd){

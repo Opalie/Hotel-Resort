@@ -11,10 +11,12 @@
 
 
 <?php
+
 session_start();
 if(!isset($_SESSION['user_id'])){
     header('location: index.php');
 }
+  
 require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
 
