@@ -6,24 +6,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/css-manager.css">
+    <link rel="stylesheet" href="style/css-employe.css">
 
     <title>Hotel F2</title>
 </head>
 <body>
-    <form action="includes/createEmploye.inc.php" method="POST">
-        <label for="prenom">Prénom</label>
-        <input type="text" name="prenom">
-        <label for="nom">Nom</label>
-        <input type="text" name ="nom">
-        <input type="submit" name="submit">
+    <form action="addEmploye.php">
+        <button type="submit">Ajouter un(e) Employé(e)</button>
     </form>
+
+<div class="affichageEmploye">
 <?php
 require_once 'includes/dbh.inc.php';
 require_once 'includes/functions.inc.php';
 
 //===============GET EMPLOYEES===========================
 
-$sql = "SELECT nom, prenom FROM employe";
+$sql = "SELECT nom, prenom, id FROM employe";
 $stmt = mysqli_stmt_init($conn);
 
 if  (!mysqli_stmt_prepare($stmt, $sql)){
@@ -40,5 +39,6 @@ foreach ($rows as $row) {
     echo ("<div class='employe'> {$row[1]} {$row[0]} </div>" );
 }
 ?>
+</div>
 </body>
 </html>
