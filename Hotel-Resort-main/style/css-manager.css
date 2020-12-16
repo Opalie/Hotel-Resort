@@ -2,6 +2,15 @@
     margin: 0;
     list-style: none;
     text-decoration: none;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+}
+
+a{
+    color: white;
 }
 
 #bandeau {
