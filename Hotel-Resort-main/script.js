@@ -1,35 +1,46 @@
-$('document').ready(function() {
-    $('.status').hide(200);
-    let cache = true;
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
 
-    $('.deux').click(function() {
-        console.log($(this).attr('id'));
-    })
-});
+openModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = document.querySelector(button.dataset.modalTarget)
+    openModal(modal)
+  })
+})
 
+overlay.addEventListener('click', () => {
+  const modals = document.querySelectorAll('.modal.active')
+  modals.forEach(modal => {
+    closeModal(modal)
+  })
+})
 
-/*  SAVE========================
+closeModalButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const modal = button.closest('.modal')
+    closeModal(modal)
+  })
+})
 
-$('document').ready(function() {
-    $('.status').hide(200);
-    let cache = true;
+function openModal(modal) {
+  if (modal == null) return
+  modal.classList.add('active')
+  overlay.classList.add('active')
+}
 
-    $('.deux').click(function() {
-        if (cache === true){
-            $('.status')
-                .fadeIn(300)
-                .css("z-index", "0")
-            $('.deux').css("z-index", "1")
-            cache = false;
-        }
-        else {
-            $('.status')
-                .fadeOut(300)
-                .css("Z-Index", "1");
-            $('.deux').css("z-index", "0")
-            cache = true;
-        }
-    })
-});
+function closeModal(modal) {
+  if (modal == null) return
+  modal.classList.remove('active')
+  overlay.classList.remove('active')
+}
 
-*/
+function CheckStatus(select){
+    CorrectValue = document.getElementById('nettoyage').value;
+    if(select.value == CorrectValue){
+        document.getElementById("affectUserList").classList.add('active');
+    }
+    else {
+        document.getElementById("affectUserList").classList.remove('active');
+    }
+}
