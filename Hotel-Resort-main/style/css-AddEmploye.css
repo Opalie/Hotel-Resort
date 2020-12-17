@@ -4,6 +4,14 @@
     text-decoration: none;
 }
 
+a:visited{
+    color: white;
+}
+
+a{
+    color: white;
+}
+
 #bandeau {
     display:flex;
     justify-content: space-around;
@@ -44,20 +52,35 @@
     text-decoration: underline;
     font-family: 'Segoe UI Bold', sans-serif;
 }
-input[type=text] {
-    width: 100%;
-    display: inline-block;
+
+input[type=text],
+input[type=password] {
+    width: 400px;
     padding: 5px;
-    margin: 5px 0 20px 0;
+    margin-bottom: 10px;
     background: #FFFFFF;
     border: 2px solid #707070;
     border-radius: 10px;
 }
+
 input[type=submit]{
+    display: flex;
     font-size: 18px;
     font-family: Segoe UI;
+    margin-left: 15%;
     color: white;
     background: #36B700;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
 }
+
+label{
+    color: #0a4ba1;
+    font-family: 'Segoe UI';
+    font-size: 20px;
+}
+.inputWrapper{
+    margin-left: 15%;
+    display: inline-block;
+    width: 14%;
+  }

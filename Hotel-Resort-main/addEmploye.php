@@ -10,10 +10,14 @@
 <body>
 <div id="titrech">Gestion des Employés</div>
 <form action="includes/createEmploye.inc.php" method="POST">
-        <label for="prenom">Prénom</label>
-        <input type="text" name="prenom">
-        <label for="nom">Nom</label>
-        <input type="text" name ="nom">
+    <div class="inputWrapper">
+            <label for="prenom">Prénom</label>
+            <input type="text" name="prenom">
+        </div>
+        <div class="inputWrapper">
+            <label for="nom">Nom</label>
+            <input type="text" name ="nom">
+        </div>
         <input type="submit" name="submit">
     </form>
 </body>
