@@ -1,1 +1,1 @@
-# Hotel-Resort F2
+# Hotel-Ressort F2
