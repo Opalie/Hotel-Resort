@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : mer. 16 déc. 2020 à 15:24
+-- Généré le : jeu. 17 déc. 2020 à 12:40
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.2.19
 
@@ -40,20 +40,20 @@ CREATE TABLE `chambre` (
 --
 
 INSERT INTO `chambre` (`id`, `numero`, `etage`, `status_id`, `employe_id`) VALUES
-(8, 1, 1, 3, NULL),
+(8, 1, 1, 2, 1),
 (9, 2, 1, 1, NULL),
 (10, 3, 1, 2, NULL),
-(11, 4, 1, 3, NULL),
+(11, 4, 1, 2, 2),
 (12, 5, 1, 1, NULL),
-(13, 9, 2, 3, NULL),
+(13, 9, 2, 2, 4),
 (14, 10, 2, 2, NULL),
 (15, 6, 1, 1, NULL),
-(16, 7, 1, 3, NULL),
+(16, 7, 1, 2, 6),
 (17, 8, 1, 2, NULL),
 (18, 11, 2, 3, NULL),
 (19, 12, 2, 3, NULL),
 (20, 13, 2, 3, NULL),
-(21, 14, 2, 3, NULL),
+(21, 14, 2, 2, 5),
 (22, 15, 2, 3, NULL),
 (23, 16, 2, 3, NULL),
 (24, 17, 3, 3, NULL),
@@ -75,20 +75,22 @@ INSERT INTO `chambre` (`id`, `numero`, `etage`, `status_id`, `employe_id`) VALUE
 CREATE TABLE `employe` (
   `id` int(11) NOT NULL,
   `prenom` varchar(255) NOT NULL,
-  `nom` varchar(255) NOT NULL
+  `nom` varchar(255) NOT NULL,
+  `id_chambre` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `employe`
 --
 
-INSERT INTO `employe` (`id`, `prenom`, `nom`) VALUES
-(1, 'Coralie', 'Bleu'),
-(2, 'Maxime', 'Vert'),
-(3, 'Léa', 'Rose'),
-(4, 'Bastien', 'Violet'),
-(5, 'Flo', 'Herm'),
-(6, 'Enzo', 'FromBridge');
+INSERT INTO `employe` (`id`, `prenom`, `nom`, `id_chambre`) VALUES
+(1, 'Coralie', 'Bleu', 8),
+(2, 'Maxime', 'Vert', 11),
+(3, 'Léa', 'Rose', NULL),
+(4, 'Bastien', 'Violet', 13),
+(5, 'Flo', 'Herm', 21),
+(6, 'Enzo', 'FromBridge', 16),
+(7, 'mei', 'sgydzociuze', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,8 @@ ALTER TABLE `chambre`
 -- Index pour la table `employe`
 --
 ALTER TABLE `employe`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_chambre` (`id_chambre`);
 
 --
 -- Index pour la table `status`
@@ -173,7 +176,7 @@ ALTER TABLE `chambre`
 -- AUTO_INCREMENT pour la table `employe`
 --
 ALTER TABLE `employe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `status`
@@ -197,6 +200,12 @@ ALTER TABLE `utilisateur`
 ALTER TABLE `chambre`
   ADD CONSTRAINT `chambre_ibfk_1` FOREIGN KEY (`employe_id`) REFERENCES `employe` (`id`),
   ADD CONSTRAINT `status_id` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`);
+
+--
+-- Contraintes pour la table `employe`
+--
+ALTER TABLE `employe`
+  ADD CONSTRAINT `employe_ibfk_1` FOREIGN KEY (`id_chambre`) REFERENCES `chambre` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
