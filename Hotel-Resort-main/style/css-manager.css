@@ -100,3 +100,27 @@ a{
     width: 70%;
     margin-left: 15%;
 }
+
+.status {
+    border: 3px solid white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px black;
+    z-index: 1;
+    background-color: whitesmoke;
+}
+
+.admin-chambre {
+    border-radius: 7px;
+    width: 35px;
+    position: relative;
+    bottom: 23px;
+    right: -145px;
+    font-size: 21px;
+    background-color: #0a4ba1;
+    border: none;
+    color: white;
+    line-height: 20px;
+    height: 25px;
+    padding: 2 2 2 2;
+    cursor: pointer;
+}

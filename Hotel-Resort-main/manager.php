@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="style/css-manager.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/css-modal.css">
+    <script src="https://kit.fontawesome.com/0abcd961be.js" crossorigin="anonymous"></script>
     <script
             src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
@@ -52,16 +54,32 @@ include_once 'header.php'
 foreach($rows as $row){
     if($row[3]==3){
         echo("
-        <div class='deux' id='{$row[0]}'>
+        <div class='deux'>
                 <div id='chambrenom'>Chambre {$row[1]}</div>
                 <div id='chambretage'>Étage {$row[2]}</div>
                 <div class='chambretat'>Libre</div>
-                <div class='status'>
-                    <label for='choix'>Statut</label><br>
-                    <input type='button' id='choix' name='choix'>
+                <button data-modal-target='#modal-{$row[0]}' class='admin-chambre'><i class='fas fa-cog'></i></button>
+            <div class='modal' id='modal-{$row[0]}'>
+                <div class='modal-header'>
+                    <div class='title'>Chambre {$row[1]}</div>
+                    <button data-close-button class='close-button'>&times;</button>
                 </div>
+                <div class='modal-body'>
+                <form action='includes/updateRoom.inc.php' method='post'>
+                    <select name='StatusChambre' id='StatusChambre' onchange='CheckStatus(this);'>
+                    <option value='1'>Occupée</option>
+                    <option value='2' id='nettoyage'>A nettoyer</option>
+                    <option value='3'>Libre</option>
+                </select>
+                    <select name='affectUserList' id='affectUserList'><option selected></option>{$employees}</select>
+                    <button type='submit' name='submit'>Attribuer</button>
+               
+                <input type='hidden' name='id_chambre' = value = '{$row[0]}'>
+            </form>
+                </div>
+            </div>
         </div>
-        ");
+    ");
     }
     if($row[3]==2){
         echo("
@@ -85,5 +103,8 @@ foreach($rows as $row){
 }
 ?>
 
+  <div id="overlay"></div>
 <script src="script.js"></script>
 </div>
+
+

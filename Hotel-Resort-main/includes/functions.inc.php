@@ -132,7 +132,7 @@ function loginUser($conn, $login, $pwd){
 
 
 function getFreeEmployees($conn){
-    $sql = "SELECT * FROM employe;";
+    $sql = "SELECT * FROM employe WHERE id_chambre IS NULL;";
     $stmt = mysqli_stmt_init($conn);
 
     if  (!mysqli_stmt_prepare($stmt, $sql)){
