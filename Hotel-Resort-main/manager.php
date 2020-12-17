@@ -5,8 +5,12 @@
     <link rel="stylesheet" href="style/css-manager.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&display=swap" rel="stylesheet">
-    <title>Hôtel Ressort F2</title>
-</head>
+    <script
+            src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous">
+    </script>
+    </head>
 
 
 
@@ -22,7 +26,7 @@ require_once 'includes/functions.inc.php';
 
 //===============GET ROOMS===========================
 
-$sql = "SELECT * FROM chambre";
+$sql = "SELECT * FROM chambre ORDER BY numero ASC";
 $stmt = mysqli_stmt_init($conn);
 
 if  (!mysqli_stmt_prepare($stmt, $sql)){
@@ -48,16 +52,20 @@ include_once 'header.php'
 foreach($rows as $row){
     if($row[3]==3){
         echo("
-        <div class='deux'>
+        <div class='deux' id='{$row[0]}'>
                 <div id='chambrenom'>Chambre {$row[1]}</div>
                 <div id='chambretage'>Étage {$row[2]}</div>
                 <div class='chambretat'>Libre</div>
-            </div>
+                <div class='status'>
+                    <label for='choix'>Statut</label><br>
+                    <input type='button' id='choix' name='choix'>
+                </div>
+        </div>
         ");
     }
     if($row[3]==2){
         echo("
-        <div class='trois'>
+        <div class='trois' >
             <div id='chambrenom'>Chambre {$row[1]}</div>
             <div id='chambretage'>Étage {$row[2]}</div>
             <div class='chambretat'>Nettoyage</div>
@@ -76,4 +84,6 @@ foreach($rows as $row){
     
 }
 ?>
+
+<script src="script.js"></script>
 </div>
