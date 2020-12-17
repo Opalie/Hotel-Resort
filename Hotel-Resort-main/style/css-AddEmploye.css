@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+#bandeau {
+    display:flex;
+    justify-content: space-around;
+    height: 5%;
+    background-color: #0a4ba1;
+    padding-top: 1%;
+}
+
+#menu.bandeau {
+    display:flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Segoe UI Regular', sans-serif;
+}
+
+#Titre.menu {
+    font-weight:bold;
+    margin-left:-25%;
+    color: white;
+    font-family: 'Segoe UI Bold', sans-serif;
+    font-size: 130%;
+}
+
+.menu, #decon.bandeau {
+    font-size:120%;
+    color:white;
+    font-family: 'Segoe UI',sans-serif;
+}
+
+#titrech {
+    margin-top: 5%;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    margin-left: 15%;
+    font-size: 175%;
+    color: #0a4ba1;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-family: 'Segoe UI Bold', sans-serif;
+}
+input[type=text] {
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px 0 20px 0;
+    background: #FFFFFF;
+    border: 2px solid #707070;
+    border-radius: 10px;
+}
+input[type=submit]{
+    font-size: 18px;
+    font-family: Segoe UI;
+    color: white;
+    background: #36B700;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
