@@ -28,7 +28,7 @@ require_once 'includes/functions.inc.php';
 
 //===============GET ROOMS===========================
 
-$sql = "SELECT * FROM chambre ORDER BY numero ASC";
+$sql = "SELECT chambre.*, employe.prenom FROM chambre LEFT OUTER JOIN employe ON chambre.id =employe.id_chambre ORDER BY numero ASC ";
 $stmt = mysqli_stmt_init($conn);
 
 if  (!mysqli_stmt_prepare($stmt, $sql)){
@@ -66,15 +66,14 @@ foreach($rows as $row){
                 </div>
                 <div class='modal-body'>
                 <form action='includes/updateRoom.inc.php' method='post'>
-                    <select name='StatusChambre' id='StatusChambre' onchange='CheckStatus(this);'>
+                    <select name='StatusChambre'>
                     <option value='1'>Occupée</option>
-                    <option value='2' id='nettoyage'>A nettoyer</option>
+                    <option value='2'>A nettoyer</option>
                     <option value='3'>Libre</option>
-                </select>
-                    <select name='affectUserList' id='affectUserList'><option selected></option>{$employees}</select>
+                    </select>
                     <button type='submit' name='submit'>Attribuer</button>
                
-                <input type='hidden' name='id_chambre' = value = '{$row[0]}'>
+                <input type='hidden' name='id_chambre' value='{$row[0]}'>
             </form>
                 </div>
             </div>
@@ -87,6 +86,21 @@ foreach($rows as $row){
             <div id='chambrenom'>Chambre {$row[1]}</div>
             <div id='chambretage'>Étage {$row[2]}</div>
             <div class='chambretat'>Nettoyage</div>
+            <button data-modal-target='#modal-{$row[0]}' class='admin-chambre'><i class='fas fa-cog'></i></button>
+            <div class='modal' id='modal-{$row[0]}'>
+                <div class='modal-header'>
+                    <div class='title'>Chambre {$row[1]}</div>
+                    <button data-close-button class='close-button'>&times;</button>
+                </div>
+                <div class='modal-body'>
+                Affectée à {$row[5]}
+                <form action='includes/affectEmployee.inc.php' method='post'>
+                    <select name='affectUserList' id='affectUserList'><option value='free' selected>Liberer</option>{$employees}</select>
+                    <button type='submit' name='submit'>Effectuer</button>
+                    <input type='hidden' name='id_chambre' value='{$row[0]}'>
+                </form>
+                </div>
+            </div>
         </div>
         ");
     }
@@ -96,6 +110,25 @@ foreach($rows as $row){
                 <div id='chambrenom'>Chambre {$row[1]}</div>
                 <div id='chambretage'>Étage {$row[2]}</div>
                 <div class='chambretat'>Occupée</div>
+                <button data-modal-target='#modal-{$row[0]}' class='admin-chambre'><i class='fas fa-cog'></i></button>
+            <div class='modal' id='modal-{$row[0]}'>
+                <div class='modal-header'>
+                    <div class='title'>Chambre {$row[1]}</div>
+                    <button data-close-button class='close-button'>&times;</button>
+                </div>
+                <div class='modal-body'>
+                <form action='includes/updateRoom.inc.php' method='post'>
+                    <select name='StatusChambre'>
+                    <option value='1'>Occupée</option>
+                    <option value='2'>A nettoyer</option>
+                    <option value='3'>Libre</option>
+                    </select>
+                    <button type='submit' name='submit'>Attribuer</button>
+               
+                <input type='hidden' name='id_chambre' value='{$row[0]}'>
+            </form>
+                </div>
+            </div>
             </div>
         ");
     }
@@ -107,4 +140,32 @@ foreach($rows as $row){
 <script src="script.js"></script>
 </div>
 
+<!--
+    <div class='deux'>
+                <div id='chambrenom'>Chambre {$row[1]}</div>
+                <div id='chambretage'>Étage {$row[2]}</div>
+                <div class='chambretat'>Libre</div>
+                <button data-modal-target='#modal-{$row[0]}' class='admin-chambre'><i class='fas fa-cog'></i></button>
+            <div class='modal' id='modal-{$row[0]}'>
+                <div class='modal-header'>
+                    <div class='title'>Chambre {$row[1]}</div>
+                    <button data-close-button class='close-button'>&times;</button>
+                </div>
+                <div class='modal-body'>
+                <form action='includes/updateRoom.inc.php' method='post'>
+                    <select name='StatusChambre'>
+                    <option value='1'>Occupée</option>
+                    <option value='2'>A nettoyer</option>
+                    <option value='3'>Libre</option>
+                    </select>
+                    <button type='submit' name='submit'>Attribuer</button>
+               
+                <input type='hidden' name='id_chambre' value='{$row[0]}'>
+            </form>
+                </div>
+            </div>
+        </div>
+
+
+-->
 

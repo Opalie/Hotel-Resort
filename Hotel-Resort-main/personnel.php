@@ -11,7 +11,6 @@
     <title>Hotel F2</title>
 </head>
 <body>
-<div id="titrech">Gestion du personnel</div>
     <form action="addEmploye.php">
         <button type="submit">Ajouter un(e) Employé(e)</button>
     </form>

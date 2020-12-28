@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="style/css-header.css">
+
 <div id="bandeau">
     <div class="bandeau" id="menu">
         <div class="menu" id="Titre">Hôtel Ressort F2</div>
