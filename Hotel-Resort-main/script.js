@@ -34,13 +34,3 @@ function closeModal(modal) {
   modal.classList.remove('active')
   overlay.classList.remove('active')
 }
-
-function CheckStatus(select){
-    CorrectValue = document.getElementById('nettoyage').value;
-    if(select.value == CorrectValue){
-        document.getElementById("affectUserList").classList.add('active');
-    }
-    else {
-        document.getElementById("affectUserList").classList.remove('active');
-    }
-}

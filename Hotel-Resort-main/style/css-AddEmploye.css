@@ -1,46 +1,3 @@
-*{
-    margin: 0;
-    list-style: none;
-    text-decoration: none;
-}
-
-a:visited{
-    color: white;
-}
-
-a{
-    color: white;
-}
-
-#bandeau {
-    display:flex;
-    justify-content: space-around;
-    height: 5%;
-    background-color: #0a4ba1;
-    padding-top: 1%;
-}
-
-#menu.bandeau {
-    display:flex;
-    justify-content: space-between;
-    color: white;
-    font-family: 'Segoe UI Regular', sans-serif;
-}
-
-#Titre.menu {
-    font-weight:bold;
-    margin-left:-25%;
-    color: white;
-    font-family: 'Segoe UI Bold', sans-serif;
-    font-size: 130%;
-}
-
-.menu, #decon.bandeau {
-    font-size:120%;
-    color:white;
-    font-family: 'Segoe UI',sans-serif;
-}
-
 #titrech {
     margin-top: 5%;
     margin-right: 5%;
@@ -83,4 +40,9 @@ label{
     margin-left: 15%;
     display: inline-block;
     width: 14%;
-  }
+}
+
+form{
+    width: 1400;
+    margin-left: 8%;
+}

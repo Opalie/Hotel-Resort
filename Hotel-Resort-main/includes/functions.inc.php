@@ -154,3 +154,72 @@ function getFreeEmployees($conn){
     return $listeEmployees;
 
 }
+
+function updateRoom($conn, $status, $room){
+    $sql = "UPDATE chambre SET status_id = ? WHERE id = ?;";
+    $stmt = mysqli_stmt_init($conn);
+    if  (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../manager.php?error=stmt(UpdateRoom)failed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ii", $status, $room);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
+function freeEmployee($conn,$chambre){
+    $sql = "UPDATE employe
+    SET id_chambre = null
+    WHERE id_chambre = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if  (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../manager.php?error=stmt(freeEmployee)failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "i", $chambre);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+
+    $sql = "UPDATE chambre
+    SET employe_id = null
+    WHERE id = ?;";
+    $stmt = mysqli_stmt_init($conn);
+
+    if  (!mysqli_stmt_prepare($stmt, $sql)){
+        header("location: ../manager.php?error=stmt(freeEmployee)failed");
+        exit();
+    }
+    mysqli_stmt_bind_param($stmt, "i", $chambre);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_close($stmt);
+}
+
+function affectEmployee($conn,$id_chambre,$employe){
+    $sql = "UPDATE chambre SET employe_id = ? WHERE id = ?; ";
+    $stmt = mysqli_stmt_init($conn);
+
+        if  (!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: ../manager.php?error=stmt(affectEmployee)failed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "ii", $employee, $id_chambre);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+
+        //UPDATE THE USER TABLE
+
+        $sql = "UPDATE employe SET id_chambre = ? WHERE id = ?; ";
+        $stmt = mysqli_stmt_init($conn);
+
+        if  (!mysqli_stmt_prepare($stmt, $sql)){
+            header("location: ../manager.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "ii", $id_chambre, $employee);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+}
