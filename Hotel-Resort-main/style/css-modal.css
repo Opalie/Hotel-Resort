@@ -6,12 +6,13 @@
     left: 50%;
     transform: translate(-50%,-50%) scale(0);
     transition: 200ms ease-in-out;
-    border: 1px solid black;
+    border: 2px solid #707077;
     border-radius: 10px;
     z-index: 10;
     background-color: white;
     width: 500px;
     max-width: 80%;
+    font-family: Segoe UI;
 }
 
 .modal.active{
@@ -23,7 +24,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid white;
 }
 
 .modal-header .title{
@@ -58,4 +59,12 @@
 #overlay.active{
     opacity: 1;
     pointer-events: all;
+}
+
+#affectUserList{
+    border: 2px solid #707077;
+    border-radius: 30px;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 2px 10px 2px 5px;
 }

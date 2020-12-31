@@ -79,8 +79,9 @@
 }
 
 button[type=submit]{
-    margin-left: 15%;
-    margin-bottom: 20px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 18px;
     font-family: Segoe UI;
     color: white;
